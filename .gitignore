@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+client_id.json
+drive_write.json
+Secret.py
