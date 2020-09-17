@@ -14,7 +14,7 @@ from httplib2 import Http
 from googleapiclient import discovery
 from googleapiclient.http import MediaIoBaseDownload
 from pathlib import Path
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 with open("members.json", 'r', encoding="utf-8") as f:
     members = json.load(f)
