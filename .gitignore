@@ -131,3 +131,5 @@ dmypy.json
 client_id.json
 drive_write.json
 Secret.py
+.vscode/
+settings.json

@@ -1,0 +1,52 @@
+{
+    "Rin": {
+        "Angel": ["RAW", "Cleaning", "Postar"],
+        "Servant": ["Type", "Postar"],
+        "Homura": ["Type"],
+        "Omotenashi": ["Cleaning", "Postar"],
+        "King's Concubine": ["RAW", "Cleaning", "Type", "Postar"],
+        "Kobayashi Kanna": ["Type", "Postar"],
+        "Sayonara": ["Type", "Postar"],
+        "Abandoned Empress": ["Cleaning", "Type", "Postar"],
+        "The Garden of Red Flowers": ["Tradução", "RAW", "Type", "Postar"],
+        "Hourglass": ["Tradução", "RAW", "Cleaning", "Type", "Postar"],
+        "Wataten": ["Type"],
+        "Bully": ["Tradução", "Postar"]
+    },
+    "Gumi": {
+        "Pond Snail Robber": ["Tradução", "Cleaning", "Redraw", "Postar"],
+        "Angel": ["Postar"],
+        "Servant": ["RAW", "Postar"],
+        "Homura": ["Tradução", "RAW", "Cleaning", "Redraw", "Postar"],
+        "Omotenashi": ["Tradução", "RAW", "Redraw", "Postar"],
+        "King's Concubine": ["Postar"],
+        "Kobayashi Kanna": ["Redraw", "Postar"],
+        "Sayonara": ["RAW", "Postar"],
+        "Abandoned Empress": ["RAW", "Postar"],
+        "The Garden of Red Flowers": ["Cleaning", "Redraw", "Postar"],
+        "Hourglass": ["Redraw", "Postar"],
+        "Wataten": ["Tradução", "RAW", "Redraw", "Postar"],
+        "Bully": ["RAW", "Redraw", "Postar"]
+    },
+    "Carlos Marcos": {
+        "King's Concubine": ["Tradução"],
+        "Sayonara": ["Tradução"],
+        "Hourglass": ["Tradução"]
+    },
+    "Haru": {
+        "Kobayashi Kanna": ["Tradução"]
+    },
+    "Poemu": {
+        "Pond Snail Robber": ["Type"],
+        "Bully": ["Cleaning"]
+    },
+    "Cami": {
+        "Angel": ["Redraw"],
+        "Abandoned Empress": ["Redraw"]
+    },
+    "nana": {
+        "Angel": ["Tradução"],
+        "Omotenashi": ["Type"],
+        "Bully": ["Type"]
+    }
+}
