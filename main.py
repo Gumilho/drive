@@ -34,7 +34,7 @@ def get_service():
 
 def download(path, folder_id, service):
     q = f"'{folder_id}' in parents"
-    files = list_folder(folder_id, q, service)
+    files = list_folder(q, service)
     
     for file in files:
         filename = path / file['name']
@@ -48,7 +48,7 @@ def download(path, folder_id, service):
             print("Download %d%%." % int(status.progress() * 100))
 
 
-def list_folder(folder_id, q, service):
+def list_folder(q, service):
     return service.files().list( # pylint: disable=maybe-no-member
         includeItemsFromAllDrives=True,
         supportsAllDrives=True,
@@ -57,31 +57,31 @@ def list_folder(folder_id, q, service):
 
 
 def drive_search(project, role, chapter, service):
-    path = f'{project},{role},cap {chapter}'
+    path = f'{project},{role},{chapter}'
     folders = path.split(',')
-    # download_id = []
-    # first search
-    file_id = ""
-    q = "mimeType='application/vnd.google-apps.folder'"
-    files = list_folder(file_id, q, service)
+    q = "'1FPnMkcY2uXxECMyQhHdsz1M7NgB7fiOs' in parents or '1At9XBjQaA0QM_NCFAvUHVJv6ozs6tVle' in parents"
+    files = list_folder(q, service)
     for folder in folders:
         flag = False
         for file in files:
-            if file['name'].lower().startswith('cap'):
-                chapter = float(file['name'].split(' ')[1])
+            try:
+                chapter = float(file["name"])
                 if chapter.is_integer():
-                    chapter = int(chapter)
-                file['name'] = "cap " + str(chapter)
-            # print(file['name'], folder)
+                    file["name"] = str(int(chapter))
+            except:
+                pass
+
             if file['name'] == folder:
                 file_id = file['id']
                 flag = True
+                break
+
         if not flag:
-            raise Exception("Chapter not found")
             print(path)
             print('------------erro------------')
+            raise Exception("Chapter not found")
         q = f"'{file_id}' in parents"
-        files = list_folder(file_id, q, service)
+        files = list_folder(q, service)
     return file_id
 
 
@@ -151,12 +151,13 @@ if __name__ == '__main__':
                                 path = Path(os.path.join(*[settings["Download Folder"], project, role, str(chapter)]))
                                 print(path)
                                 if not os.path.exists(path):
-                                    path.mkdir(parents=True, exist_ok=True)
                                     try:
                                         folder_id = drive_search(project, role, chapter, service=service)
                                     except Exception:
+                                        print("cant search")
                                         continue
 
+                                    path.mkdir(parents=True, exist_ok=True)
                                     download(path, folder_id, service)
 
 
